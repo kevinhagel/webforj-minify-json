@@ -1,0 +1,35 @@
+# webforj-minify.txt - JSON Minification Patterns
+#
+# This file controls which JSON files are processed by the webforJ minification plugin.
+# Place this file at: src/main/resources/META-INF/webforj-minify.txt
+#
+# Pattern Syntax:
+#   **       - Matches any number of directories
+#   *        - Matches any characters within a directory or filename
+#   !prefix  - Excludes matching files
+#   #        - Comment line
+#
+# Note: The JSON minifier also has built-in logic to skip:
+#   - package.json (NPM configuration)
+#   - tsconfig.json (TypeScript configuration)
+#   - *.lock.json (package lock files)
+
+# Example 1: Minify all JSON files in static directory
+static/**/*.json
+
+# Example 2: Minify API response data
+api/responses/*.json
+api/data/*.json
+
+# Example 3: Exclude configuration files
+!static/config/*.json
+!**/settings.json
+
+# Example 4: Minify data files but not schemas
+static/data/**/*.json
+!static/data/schemas/*.json
+
+# Example 5: Exclude test fixtures
+!**/fixtures/*.json
+!**/test-data/*.json
+!src/test/resources/**/*.json
