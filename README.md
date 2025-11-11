@@ -19,6 +19,28 @@ This project demonstrates how to create custom minifier implementations using th
 - Maven 3.6+ or Gradle 7.6+
 - webforj-minify-foundation 25.10 or higher
 
+## Prerequisites
+
+Before using this JSON minifier, you must have the webforJ minification plugin installed in your local Maven repository:
+
+```bash
+# Clone and build the webforJ plugins project
+git clone https://github.com/webforj/webforj-plugins.git
+cd webforj-plugins/webforj-minify
+
+# Install to local Maven repository
+mvn clean install
+
+# This installs:
+# - webforj-minify-foundation (required dependency)
+# - webforj-minify-maven-plugin (Maven plugin)
+# - webforj-minify-gradle-plugin (Gradle plugin)
+# - webforj-minify-phcss-css (optional CSS minifier)
+# - webforj-minify-closure-js (optional JS minifier)
+```
+
+Once the webforJ minification plugins are installed, you can build and install this JSON minifier.
+
 ## Installation
 
 ### Maven
